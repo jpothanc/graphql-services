@@ -1,17 +1,16 @@
+
 type Query {
-    findBookById(id: ID): Book
-    findWebCounterById(siteName: ID): WebCounter
+    findEquityByCode(productCode: ID): Equity
+}
+type Equity {
+    productCode: String
+    stockName: String
+    primaryExchange: String
+    lotSize: Int
+    lastClosePrice: Float
+    currency: String!
+    day20AverageVolume: Float!
+    day30AverageVolume: Float!
 }
 
-type Book {
-    id: ID
-    title: String
-    author: String
-}
 
-type WebCounter {
-    siteName: String
-    counter : String
-    modified_by: String
-    modified_date : String
-}
