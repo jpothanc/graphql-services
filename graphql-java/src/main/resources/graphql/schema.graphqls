@@ -1,0 +1,17 @@
+type Query {
+    findBookById(id: ID): Book
+    findWebCounterById(siteName: ID): WebCounter
+}
+
+type Book {
+    id: ID
+    title: String
+    author: String
+}
+
+type WebCounter {
+    siteName: String
+    counter : String
+    modified_by: String
+    modified_date : String
+}
