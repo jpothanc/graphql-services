@@ -1,7 +1,9 @@
 
 type Query {
     findEquityByCode(productCode: ID): Equity
+    findEquityByName(stockName: String): [Equity]
 }
+
 type Equity {
     productCode: String
     stockName: String
@@ -13,4 +15,18 @@ type Equity {
     day30AverageVolume: Float!
 }
 
+
+input EquityInput {
+    productCode: String!
+    stockName: String!
+    primaryExchange: String
+    lotSize: Int
+    lastClosePrice: Float
+    currency: String!
+    day20AverageVolume: Float!
+    day30AverageVolume: Float!
+}
+type Mutation {
+    saveEquity(input: EquityInput): Equity
+}
 

@@ -1,0 +1,33 @@
+I made lot of trial and error to this working with Querydsl
+<!-- https://mvnrepository.com/artifact/com.querydsl/querydsl-jpa -->
+<dependency>
+    <groupId>com.querydsl</groupId>
+    <artifactId>querydsl-jpa</artifactId>
+    <version>5.0.0</version>
+    <classifier>jakarta</classifier>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.querydsl/querydsl-apt -->
+<dependency>
+    <groupId>com.querydsl</groupId>
+    <artifactId>querydsl-apt</artifactId>
+    <!-- The classifier jakarta indicates a specific packaging of the
+         dependency that's compatible with Jakarta Persistence API.
+         This is significant because Jakarta Persistence is the namespace and path forward
+         for what was formerly known as Java Persistence API (JPA) under the javax.* namespace.
+          -->
+    <classifier>jakarta</classifier>
+    <!--1The provided scope indicates that the dependency is required for compilation
+    but should not be included in the project's deployment assembly.
+    This is what is responsible for generating the Q classes-->
+    -->
+    <scope>provided</scope>
+    <version>5.0.0</version>
+</dependency>
+
+Change the Repository class to extend QuerydslPredicateExecutor to support Querydsl
+```java
+```
+
+Implementing a health check in a Java application that uses GraphQL with Spring Boot and the graphql-kickstart
+library involves creating an endpoint that external systems can query to check the health status of your application. This is crucial for production environments to monitor application health and handle issues proactively. Spring Boot Actuator provides built-in endpoints for health checks and other metrics,
+which you can easily extend or customize for your application's needs.
