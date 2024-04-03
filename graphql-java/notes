@@ -31,3 +31,20 @@ Change the Repository class to extend QuerydslPredicateExecutor to support Query
 Implementing a health check in a Java application that uses GraphQL with Spring Boot and the graphql-kickstart
 library involves creating an endpoint that external systems can query to check the health status of your application. This is crucial for production environments to monitor application health and handle issues proactively. Spring Boot Actuator provides built-in endpoints for health checks and other metrics,
 which you can easily extend or customize for your application's needs.
+
+
+http://localhost:8081/graphiql?path=/graphql
+query{
+  findEquityByCode(productCode:"0005.HK")
+  {
+    productCode
+    stockName
+    primaryExchange
+    lotSize
+    lastClosePrice
+    currency
+    day20AverageVolume
+    day30AverageVolume
+  }
+
+}
